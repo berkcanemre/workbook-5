@@ -7,6 +7,14 @@ public class Vehicle {
     private int cargoCapacity;
     private int fuelCapacity;
 
+    // Constructor - Updated
+    public Vehicle(String color, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {
+        this.color = color;
+        this.numberOfPassengers = numberOfPassengers;
+        this.cargoCapacity = cargoCapacity;
+        this.fuelCapacity = fuelCapacity;
+    }
+
     // Getters and Setters
     public String getColor() {
         return color;
@@ -39,36 +47,20 @@ public class Vehicle {
     public void setFuelCapacity(int fuelCapacity) {
         this.fuelCapacity = fuelCapacity;
     }
-//  Part 2
-    public static void main(String[] args) {
-        Moped slowRide = new Moped();
-        slowRide.setColor("Red");
-        slowRide.setFuelCapacity(5);
-        slowRide.setNumberOfPassengers(1);
-        slowRide.setCargoCapacity(10);
+    //Part 3
+    public class Vehicles {
+        public static void main(String[] args) {
+            // Creating objects using constructors
+            Moped slowRide = new Moped("Red", 1, 10, 5);
+            Car sedan = new Car("Blue", 5, 200, 15);
+            SemiTruck freightKing = new SemiTruck("White", 2, 5000, 300);
+            Hovercraft hover = new Hovercraft("Silver", 4, 150, 100);
 
-        Car sedan = new Car();
-        sedan.setColor("Blue");
-        sedan.setFuelCapacity(15);
-        sedan.setNumberOfPassengers(5);
-        sedan.setCargoCapacity(200);
-
-        SemiTruck freightKing = new SemiTruck();
-        freightKing.setColor("White");
-        freightKing.setFuelCapacity(300);
-        freightKing.setNumberOfPassengers(2);
-        freightKing.setCargoCapacity(5000);
-
-        Hovercraft hover = new Hovercraft();
-        hover.setColor("Silver");
-        hover.setFuelCapacity(100);
-        hover.setNumberOfPassengers(4);
-        hover.setCargoCapacity(150);
-
-        // Output to test
-        System.out.println("Moped color: " + slowRide.getColor());
-        System.out.println("Car passengers: " + sedan.getNumberOfPassengers());
-        System.out.println("Truck cargo: " + freightKing.getCargoCapacity());
-        System.out.println("Hovercraft fuel: " + hover.getFuelCapacity());
+            // Display vehicle information
+            System.out.println("Moped color: " + slowRide.getColor());
+            System.out.println("Car passengers: " + sedan.getNumberOfPassengers());
+            System.out.println("Truck cargo capacity: " + freightKing.getCargoCapacity());
+            System.out.println("Hovercraft fuel capacity: " + hover.getFuelCapacity());
+        }
     }
 }
